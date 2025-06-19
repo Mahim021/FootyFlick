@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/single_match"
+        android:title="Single Match"
+        android:icon="@drawable/single_light"/>
+
+    <item
+        android:id="@+id/fab"
+        android:title=""
+        android:enabled="false"/>
+
+    <item
+        android:id="@+id/tournament"
+        android:title="Tournament Mode"
+        android:icon="@drawable/multiple_light"/>
 
 </menu>
