@@ -1,5 +1,6 @@
 package com.example.footyflick;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
 
@@ -72,9 +75,21 @@ public class SingleFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_single, container, false);
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // OnClick
+        Button myButton = view.findViewById(R.id.confirmMatchButton);
+
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), SingleHomePage.class);
+                startActivity(intent);
+            }
+        });
 
         // Initialize the date picker
         EditText dateEditText = view.findViewById(R.id.date);
@@ -117,8 +132,5 @@ public class SingleFragment extends Fragment {
             String selectedTeam = options[position];
             // Handle your selection here
         });
-
     }
-
-
 }

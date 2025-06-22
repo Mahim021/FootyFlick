@@ -1,0 +1,299 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="80dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--        Confirmed Matches Section-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="25dp">
+
+<!--            Section Title-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmed Matches"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="16dp" />
+
+<!--            Underline-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="@color/white"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="20dp"/>
+
+<!--            Match Cards-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+<!--        Previous Matches Section-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+<!--            Section Title-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Previous Matches"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="16dp" />
+
+<!--            Underline-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="@color/white"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="20dp"/>
+
+<!--            Match Cards-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_edge">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bal Vs Chaal"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23 Oct, 2025"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+<!--Button Layout-->
+    <LinearLayout
+    android:id="@+id/floatingButtonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="16dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register a Team"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/green"
+            android:textColor="@color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create new Match"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </LinearLayout>
+
+    </FrameLayout>
