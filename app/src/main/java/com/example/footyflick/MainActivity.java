@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new TournamentFragment());
             }
 
-            return true;
+            return true;  //comment for tahmid khankirpola
         });
     }
 
