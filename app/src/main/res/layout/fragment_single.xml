@@ -3,14 +3,253 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SingleFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="single match fragment"
-        android:textSize="100dp"
-        android:layout_gravity="center"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:divider="@drawable/divider_gap"
+            android:showDividers="middle">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create New Match"
+                android:textSize="24sp"
+                android:padding="15dp"
+                android:backgroundTint="@color/gray"
+                android:layout_gravity="center"
+                style="@style/RoundedLayout"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Match Name"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/matchName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter match name"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_edge"
+                    android:backgroundTint="@color/gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Team Size"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/teamSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Team Size"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_edge"
+                    android:backgroundTint="@color/gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Team-1 Name"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/teamSelectorLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Team"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="dropdown_menu"
+                    android:background="@drawable/rounded_edge"
+                    android:backgroundTint="@color/gray"
+                    app:boxBackgroundMode="filled"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@android:color/transparent"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/teamSelector1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:paddingLeft="10dp"
+                        android:backgroundTint="@color/gray"
+                        android:popupBackground="@color/white"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Team-2 Name"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/teamSelectorLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Team"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="dropdown_menu"
+                    android:background="@drawable/rounded_edge"
+                    android:backgroundTint="@color/gray"
+                    app:boxBackgroundMode="filled"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@android:color/transparent"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/teamSelector2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:paddingLeft="10dp"
+                        android:backgroundTint="@color/gray"
+                        android:popupBackground="@color/white"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edge"
+                    android:backgroundTint="@color/gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Venue"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Venue"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_edge"
+                    android:backgroundTint="@color/gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
+
+<!--                cancel match material button-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancelMatchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel Match"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cornerRadius="10dp"
+                    android:backgroundTint="@color/red"
+                    android:textColor="@color/white"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+<!--                confirm match material button-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/confirmMatchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Match"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:cornerRadius="10dp"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/white"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
