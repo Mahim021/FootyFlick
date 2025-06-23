@@ -8,4 +8,11 @@
         <item>Select from saved teams</item>
         <item>Create new team</item>
     </string-array>
+
+    <string-array name="tournament_type">
+        <item>League</item>
+        <item>Knockout</item>
+        <item>League and Knockout</item>
+        <item>Custom</item>
+    </string-array>
 </resources>
