@@ -2,22 +2,18 @@ package com.example.footyflick;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TournamentFragment#newInstance} factory method to
+ * Use the {@link TournamentHomePageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TournamentFragment extends Fragment {
+public class TournamentHomePageFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +24,7 @@ public class TournamentFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TournamentFragment() {
+    public TournamentHomePageFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +34,11 @@ public class TournamentFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TournamentFragment.
+     * @return A new instance of fragment TournamentHomePageFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TournamentFragment newInstance(String param1, String param2) {
-        TournamentFragment fragment = new TournamentFragment();
+    public static TournamentHomePageFragment newInstance(String param1, String param2) {
+        TournamentHomePageFragment fragment = new TournamentHomePageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -51,24 +47,18 @@ public class TournamentFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
-
-        String[] options = getResources().getStringArray(R.array.tournament_type);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, options);
-
-        AutoCompleteTextView tournamentType = view.findViewById(R.id.selectTypeACT1);
-        tournamentType.setAdapter(adapter);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tournament, container, false);
+        return inflater.inflate(R.layout.fragment_tournament_home_page, container, false);
     }
 }
