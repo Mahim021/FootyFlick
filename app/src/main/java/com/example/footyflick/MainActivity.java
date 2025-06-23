@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new SingleFragment());
+        replaceFragment(new SingleHomePageFragment());
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
             if (id == R.id.single) {
-                replaceFragment(new SingleFragment());
+                replaceFragment(new SingleHomePageFragment());
             } else if (id == R.id.tournament) {
                 replaceFragment(new TournamentFragment());
             }
