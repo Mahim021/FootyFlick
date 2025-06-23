@@ -4,7 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="team_options">
-        <item>None selected</item>
         <item>Select from saved teams</item>
         <item>Create new team</item>
     </string-array>

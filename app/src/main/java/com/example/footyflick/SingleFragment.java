@@ -37,9 +37,8 @@ public class SingleFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
-        EditText dateEditText = view.findViewById(R.id.date);
+        // Match date picker
+        EditText dateEditText = view.findViewById(R.id.matchDate);
         MaterialDatePicker<Long> materialDatePicker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Select a date")
                 .build();
@@ -54,6 +53,7 @@ public class SingleFragment extends Fragment {
             dateEditText.setText(formattedDate);
         });
 
+        // Team selector options
         String[] options = getResources().getStringArray(R.array.team_options);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, options);
 
@@ -62,5 +62,31 @@ public class SingleFragment extends Fragment {
 
         AutoCompleteTextView teamSelector2 = view.findViewById(R.id.teamSelector2);
         teamSelector2.setAdapter(adapter);
+
+
+        // Reference all input fields and buttons
+        AutoCompleteTextView team1 = view.findViewById(R.id.teamSelector1);
+        AutoCompleteTextView team2 = view.findViewById(R.id.teamSelector2);
+
+        Button confirmBtn = view.findViewById(R.id.confirmMatchButton);
+        Button cancelBtn = view.findViewById(R.id.cancelMatchButton);
+
+        // ✅ 1. Confirm button click: Check required fields
+        confirmBtn.setOnClickListener(v -> {
+            if (team1.getText().toString().trim().isEmpty()) {
+                Toast.makeText(requireContext(), "Please select Team 1", Toast.LENGTH_SHORT).show();
+            } else if (team2.getText().toString().trim().isEmpty()) {
+                Toast.makeText(requireContext(), "Please select Team 2", Toast.LENGTH_SHORT).show();
+            } else {
+                // All required fields filled
+                Toast.makeText(requireContext(), "Match confirmed!", Toast.LENGTH_SHORT).show();
+                requireActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+
+        // ✅ 2. Cancel button click: Clear all inputs and go back
+        cancelBtn.setOnClickListener(v -> {
+            requireActivity().getSupportFragmentManager().popBackStack();
+        });
     }
 }
