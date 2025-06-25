@@ -105,8 +105,7 @@
                     app:boxBackgroundColor="@android:color/transparent"
                     app:boxStrokeColor="@android:color/transparent"
                     app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
-                    >
+                    app:boxStrokeWidthFocused="0dp">
 
                     <AutoCompleteTextView
                         android:id="@+id/teamSelector1"

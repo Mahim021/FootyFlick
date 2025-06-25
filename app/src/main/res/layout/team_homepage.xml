@@ -1,0 +1,73 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/single_homepage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="90dp"
+        android:paddingTop="20dp">
+
+
+
+<!--    Registered Teams Section-->
+        <LinearLayout
+            android:id="@+id/registeredTeamsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="25dp">
+
+<!--         Section Title-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registered Teams"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="16dp" />
+
+<!--        Underline-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@color/white"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginBottom="20dp"/>
+
+<!--        Team Cards are dynamically generated from here on-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--Button Layout-->
+    <LinearLayout
+        android:id="@+id/floatingButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:padding="16dp" >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createNewTeamButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create new Team"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </LinearLayout>
+
+</FrameLayout>

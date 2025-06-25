@@ -78,13 +78,12 @@ public class SingleFragment extends Fragment {
             } else if (team2.getText().toString().trim().isEmpty()) {
                 Toast.makeText(requireContext(), "Please select Team 2", Toast.LENGTH_SHORT).show();
             } else {
-                // All required fields filled
                 Toast.makeText(requireContext(), "Match confirmed!", Toast.LENGTH_SHORT).show();
                 requireActivity().getSupportFragmentManager().popBackStack();
             }
         });
 
-        // ✅ 2. Cancel button click: Clear all inputs and go back
+        // ✅ 2. Cancel button click: go back
         cancelBtn.setOnClickListener(v -> {
             requireActivity().getSupportFragmentManager().popBackStack();
         });

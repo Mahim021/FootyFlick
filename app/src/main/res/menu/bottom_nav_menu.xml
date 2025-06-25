@@ -7,4 +7,7 @@
     <item android:title="tournament"
         android:icon="@drawable/tournament"
         android:id="@+id/tournament"/>
+    <item android:title="Teams"
+        android:icon="@drawable/sports_kabaddi_24px"
+        android:id="@+id/teams"/>
 </menu>
