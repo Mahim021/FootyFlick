@@ -1,5 +1,6 @@
 package com.example.footyflick;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -93,32 +95,36 @@ public class SingleFragment extends Fragment {
             dateEditText.setText(formattedDate);
         });
 
-        // Initialize the AutoCompleteTextView for both team selection
+        // Setup AutoCompleteTextView for Team 1
         AutoCompleteTextView teamSelector1 = view.findViewById(R.id.teamSelector1);
-
         String[] options = getResources().getStringArray(R.array.team_options);
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 requireContext(),
                 R.layout.list_item,
                 options);
-
         teamSelector1.setAdapter(adapter);
-
-        // Optional: To handle selection events
         teamSelector1.setOnItemClickListener((parent, view1, position, id) -> {
             String selectedTeam = options[position];
-            // Handle your selection here
+            // Handle selection for team 1
         });
 
+        // Setup AutoCompleteTextView for Team 2
         AutoCompleteTextView teamSelector2 = view.findViewById(R.id.teamSelector2);
         teamSelector2.setAdapter(adapter);
         teamSelector2.setOnItemClickListener((parent, view2, position, id) -> {
             String selectedTeam = options[position];
-            // Handle your selection here
+            // Handle selection for team 2
         });
 
+        // ✅ New: Handle "Confirm Match" button click
+        // This will start the running_match_controller activity
+        Button confirmMatchButton = view.findViewById(R.id.confirmMatchButton);
+        confirmMatchButton.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), running_match_controller.class); // Must match class name
+            startActivity(intent);
+        });
     }
+
 
 
 }

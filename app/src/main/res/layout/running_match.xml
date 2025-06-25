@@ -13,51 +13,48 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="40dp"
-            >
+            android:padding="40dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#DDFED4"
-                android:orientation="horizontal"
+                android:background="@drawable/rounded_edge_and_color"
                 android:gravity="center"
+                android:orientation="horizontal"
                 >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/running_match_team_1_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="Team A" />
+                        android:text="Team A"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
-                        <LinearLayout
-                            android:layout_width="70dp"
-                            android:layout_height="80dp"
-                            android:layout_margin="10dp"
-                            android:background="#799676"
-                            android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="10dp"
+                        android:background="#799676"
+                        android:gravity="center">
 
-                          <TextView
-                              android:id="@+id/running_match_team_1_score"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:textSize="60sp"
-                              android:text="0"
-                              android:textColor="@color/white">
-                          </TextView>
-                        </LinearLayout>
-
-
+                        <TextView
+                            android:id="@+id/running_match_team_1_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="60sp"></TextView>
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -65,16 +62,17 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/running_match_team_2_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="Team B" />
+                        android:text="Team B"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <LinearLayout
                         android:layout_width="70dp"
@@ -87,13 +85,10 @@
                             android:id="@+id/running_match_team_2_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="60sp"
                             android:text="0"
-                            android:textColor="@color/white">
-                        </TextView>
+                            android:textColor="@color/white"
+                            android:textSize="60sp"></TextView>
                     </LinearLayout>
-
-
 
 
                 </LinearLayout>
@@ -104,61 +99,78 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#DDFED4"
                 android:layout_marginTop="50dp"
-                android:orientation="horizontal"
+                android:background="@drawable/rounded_edge_and_color"
                 android:gravity="center"
-                >
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginRight="50dp"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_marginRight="50dp">
+                    android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/team_A_shots"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
                         android:text="0" />
 
                     <TextView
+                        android:id="@+id/team_A_offside"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
                         android:text="0" />
 
                     <TextView
+                        android:id="@+id/team_A_saves"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
                         android:text="0" />
 
                     <TextView
+                        android:id="@+id/team_A_fouls"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/team_A_yellow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/team_A_red"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -169,8 +181,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    >
+                    android:paddingRight="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -227,52 +238,95 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:paddingLeft="50dp"
-                    >
+                    android:paddingLeft="50dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="0" />
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
                 </LinearLayout>
-              </LinearLayout>
             </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="50dp"
+                android:gravity="center"
+            >
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Next_Event_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next Event"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#612129">
+                </com.google.android.material.button.MaterialButton>
+
+
+                <Button
+                    android:id="@+id/end_match_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End Match"
+                    android:layout_marginTop="100dp"
+                    android:backgroundTint="#ff0000">
+
+                </Button>
+            </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
