@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TournamentHomePageFragment">
 
     <ScrollView
@@ -33,11 +34,124 @@
                 android:text="Load Tournament"
                 android:textSize="20sp"
                 android:layout_marginTop="40dp"
+                android:layout_marginBottom="5dp"
                 android:textColor="@color/white"
                 android:layout_marginHorizontal="16dp" />
 
+            <LinearLayout
+                android:id="@+id/savedTournament1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:backgroundTint="@color/green"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:background="@drawable/rounded_edge"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
 
+                <TextView
+                    android:id="@+id/savedTournament1Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GOL Cup"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/savedTournament1Progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 Matches Completed"
+                    android:textColor="#D6000000"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/savedTournament2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:backgroundTint="@color/green"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:background="@drawable/rounded_edge"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/savedTournament2Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OGL Cup"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/savedTournament2Progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Matches Completed"
+                    android:textColor="#D6000000"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/savedTournament3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:backgroundTint="@color/green"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:background="@drawable/rounded_edge"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/savedTournament3Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOG Cup"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/savedTournament3Progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8 Matches Completed"
+                    android:textColor="#D6000000"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/floatingButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:padding="16dp" >
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/createTournamentButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create new Tournament"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:cornerRadius="10dp"
+                    android:backgroundTint="#13A4F2"
+                    android:textColor="@color/white"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+
 </FrameLayout>

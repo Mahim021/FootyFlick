@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.single) {
                 replaceFragment(new SingleHomePageFragment());
             } else if (id == R.id.tournament) {
-                replaceFragment(new TournamentFragment());
+                replaceFragment(new TournamentHomePageFragment());
             }
 
             return true;
