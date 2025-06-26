@@ -117,12 +117,12 @@ public class SingleFragment extends Fragment {
         });
 
         // ✅ New: Handle "Confirm Match" button click
-        // This will start the running_match_controller activity
-        Button confirmMatchButton = view.findViewById(R.id.confirmMatchButton);
-        confirmMatchButton.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), running_match_controller.class); // Must match class name
-            startActivity(intent);
-        });
+        // This will start the running_match_controller activity        //done by antu
+//        Button confirmMatchButton = view.findViewById(R.id.confirmMatchButton);
+//        confirmMatchButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(requireContext(), running_match_controller.class); // Must match class name
+//            startActivity(intent);
+//        });
     }
 
 
