@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new TournamentFragment());
             } else if (id == R.id.teams) {
                 replaceFragment(new TeamFragment());
+            } else if (id == R.id.profile) {
+                replaceFragment(new ProfileFragment());
             }
 
             return true;
