@@ -75,7 +75,8 @@
                     android:hint="Enter Team Size"
                     android:padding="10dp"
                     android:background="@drawable/rounded_edge"
-                    android:backgroundTint="@color/gray" />
+                    android:backgroundTint="@color/gray"
+                    android:inputType="number"/>
             </LinearLayout>
 
             <LinearLayout
@@ -104,8 +105,7 @@
                     app:boxBackgroundColor="@android:color/transparent"
                     app:boxStrokeColor="@android:color/transparent"
                     app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
-                    >
+                    app:boxStrokeWidthFocused="0dp">
 
                     <AutoCompleteTextView
                         android:id="@+id/teamSelector1"
@@ -177,7 +177,7 @@
                     android:textColor="@color/white"/>
 
                 <EditText
-                    android:id="@+id/date"
+                    android:id="@+id/matchDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Select Date"
@@ -203,7 +203,7 @@
                     android:textColor="@color/white"/>
 
                 <EditText
-                    android:id="@+id/venue"
+                    android:id="@+id/matchVenue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter Venue"

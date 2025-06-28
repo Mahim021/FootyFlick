@@ -9,5 +9,6 @@
     <color name="orange">#FF9800</color>
     <color name="purple">#9C27B0</color>
     <color name="gray">#9E9E9E</color>
+    <color name="darkGray">#4A4A4A</color>
     <color name="teal">#009688</color>
 </resources>

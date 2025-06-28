@@ -82,9 +82,4 @@ public class running_match_controller extends AppCompatActivity {
         });
     }
 
-
-
-
-
-
 }
