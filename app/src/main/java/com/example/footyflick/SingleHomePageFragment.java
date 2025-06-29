@@ -52,7 +52,11 @@ public class SingleHomePageFragment extends Fragment {
         // Generate done matches
         generateMatch(true, view, "doneMatchesContainer");
 
+
+
     }
+
+
 
 
     // Generates matches based on the done status

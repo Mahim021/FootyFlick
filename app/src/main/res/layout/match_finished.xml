@@ -1,0 +1,134 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/end_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:clipChildren="false"> <!-- ✅ Allows expansion animation -->
+
+    <!-- ✅ Removed expanding_circle -->
+
+    <!-- ✅ Score box that will grow -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+    <LinearLayout
+        android:id="@+id/score_box"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edge_and_color"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_margin="36dp"
+        android:clipChildren="false"> <!-- ✅ Prevents internal clipping -->
+
+        <!-- Team A block -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/match_finished_team_1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Team A"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="#799676"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/match_finished_team_1_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="60sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Full Time"
+            android:textStyle="bold"/>
+
+        <!-- Team B block -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/match_finished_team_2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Team B"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="#799676"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/match_finished_team_2_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="60sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:paddingLeft="36dp"
+         android:paddingRight="36dp"
+         android:gravity="center">
+
+         <com.google.android.material.button.MaterialButton
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="player stats"
+             android:layout_marginRight="20dp"
+             android:backgroundTint="#353456"
+             />
+         <com.google.android.material.button.MaterialButton
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="goto home"
+             android:layout_marginLeft="10dp"
+             android:backgroundTint="#847459"
+             />
+
+     </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

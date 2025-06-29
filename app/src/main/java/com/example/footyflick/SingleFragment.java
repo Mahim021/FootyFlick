@@ -1,5 +1,6 @@
 package com.example.footyflick;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -23,9 +24,11 @@ import java.util.Locale;
 
 public class SingleFragment extends Fragment {
 
+
     public SingleFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,19 +76,37 @@ public class SingleFragment extends Fragment {
 
         // ✅ 1. Confirm button click: Check required fields
         confirmBtn.setOnClickListener(v -> {
-            if (team1.getText().toString().trim().isEmpty()) {
+            if (teamSelector1.getText().toString().trim().isEmpty()) {
                 Toast.makeText(requireContext(), "Please select Team 1", Toast.LENGTH_SHORT).show();
-            } else if (team2.getText().toString().trim().isEmpty()) {
+            } else if (teamSelector2.getText().toString().trim().isEmpty()) {
                 Toast.makeText(requireContext(), "Please select Team 2", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(requireContext(), "Match confirmed!", Toast.LENGTH_SHORT).show();
-                requireActivity().getSupportFragmentManager().popBackStack();
+                new AlertDialog.Builder(requireContext())
+                        .setTitle("Start Match")
+                        .setMessage("Do you want to start the match now?")
+                        .setPositiveButton("Yes", (dialog, which) -> {
+                            Toast.makeText(requireContext(), "Match starting now!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(requireContext(), running_match_controller.class); // Must match class name
+                            startActivity(intent);
+                        })
+                        .setNegativeButton("No, save for later", (dialog, which) -> {
+                            requireActivity().getSupportFragmentManager().popBackStack();
+                        })
+                        .show();
             }
         });
 
+
         // ✅ 2. Cancel button click: go back
-        cancelBtn.setOnClickListener(v -> {
+        cancelBtn.setOnClickListener(V -> {
             requireActivity().getSupportFragmentManager().popBackStack();
         });
-    }
-}
+
+        // ✅ New: Handle "Confirm Match" button click
+        // This will start the running_match_controller activity        //done by antu
+//        Button confirmMatchButton = view.findViewById(R.id.confirmMatchButton);
+//        confirmMatchButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(requireContext(), running_match_controller.class); // Must match class name
+//            startActivity(intent);
+//        });
+}}
