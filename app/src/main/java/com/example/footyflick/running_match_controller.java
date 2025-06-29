@@ -1,16 +1,23 @@
 package com.example.footyflick;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -21,8 +28,6 @@ public class running_match_controller extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.running_match); //  links the controller to XML
-
-
 
         MaterialButton nextEventBtn = findViewById(R.id.Next_Event_button); // your button ID
 
@@ -51,7 +56,48 @@ public class running_match_controller extends AppCompatActivity {
             });
         });
 
+        ImageView rotatingBall = findViewById(R.id.rotatingball);
+        Animation rotation = AnimationUtils.loadAnimation(this, R.anim.running_match_ball);
+        rotatingBall.startAnimation(rotation);
 
+//        // EDITED START: Added onClick listener for end_match_button to open SingleHomePageFragment
+//        Button endMatchBtn = findViewById(R.id.end_match_button);
+//        endMatchBtn.setOnClickListener(v -> {
+//            // Open SingleHomePageFragment
+//            SingleHomePageFragment fragment = new SingleHomePageFragment();
+//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//            transaction.replace(android.R.id.content, fragment);  // replace current view with fragment
+//            transaction.addToBackStack(null); // optional: allow back navigation
+//            transaction.commit();
+//        });
+        // EDITED END
+
+
+
+        //this part comes when the end match button is pressed
+
+        Button endMatchButton = findViewById(R.id.end_match_button);
+        TextView team1ScoreView = findViewById(R.id.running_match_team_1_score);
+        TextView team2ScoreView = findViewById(R.id.running_match_team_2_score);
+
+// Get the score values as integers
+        int scoreA = Integer.parseInt(team1ScoreView.getText().toString());
+        int scoreB = Integer.parseInt(team2ScoreView.getText().toString());
+
+        endMatchButton.setOnClickListener(v -> {
+            new AlertDialog.Builder(running_match_controller.this)
+                    .setTitle("End Match")
+                    .setMessage("Are you sure you want to end the match?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        Intent intent = new Intent(running_match_controller.this, match_finished.class);
+                        intent.putExtra("scoreTeamA", scoreA); // pass actual score
+                        intent.putExtra("scoreTeamB", scoreB);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        });
     }
 
     private void openPlayerPopup(String team, String event) {
@@ -81,5 +127,7 @@ public class running_match_controller extends AppCompatActivity {
             Toast.makeText(this, event + " by " + selectedPlayer + " (" + team + ")", Toast.LENGTH_SHORT).show();
         });
     }
+
+
 
 }

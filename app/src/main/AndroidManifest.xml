@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FootyFlick"
         tools:targetApi="31">
-
+        <activity
+            android:name=".player_stat"
+            android:exported="false" />
         <!-- Your launcher activity -->
         <activity
             android:name=".MainActivity"
@@ -22,11 +24,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- ✅ Add this -->
+        </activity> <!-- ✅ Add this -->
         <activity android:name=".running_match_controller" />
-
+        <activity android:name=".match_finished" />
     </application>
 
 </manifest>
