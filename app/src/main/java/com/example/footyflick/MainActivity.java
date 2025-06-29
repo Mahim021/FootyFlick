@@ -2,7 +2,11 @@ package com.example.footyflick;
 
 import android.os.Bundle;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
             if (id == R.id.single) {
                 replaceFragment(new SingleHomePageFragment());
-            } else if (id == R.id.tournament) {
-                replaceFragment(new TournamentFragment());
-            } else if (id == R.id.teams) {
-                replaceFragment(new TeamFragment());
             } else if (id == R.id.profile) {
                 replaceFragment(new ProfileFragment());
+            }
+            else if (id == R.id.teams){
+                replaceFragment(new TeamFragment());
+            }
+            else if(id == R.id.tournament){
+                replaceFragment(new TournamentHomePageFragment());
             }
 
             return true;
