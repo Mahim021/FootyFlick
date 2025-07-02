@@ -64,7 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Full Time"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <!-- Team B block -->
         <LinearLayout
@@ -112,18 +113,21 @@
          android:gravity="center">
 
          <com.google.android.material.button.MaterialButton
+             android:id="@+id/player_stat_button"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="player stats"
+             android:textColor="@color/white"
              android:layout_marginRight="20dp"
-             android:backgroundTint="#353456"
+             android:backgroundTint="#284749"
              />
          <com.google.android.material.button.MaterialButton
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="goto home"
+             android:textColor="@color/white"
              android:layout_marginLeft="10dp"
-             android:backgroundTint="#847459"
+             android:backgroundTint="#284749"
              />
 
      </LinearLayout>

@@ -13,23 +13,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.button.MaterialButton;
-
 
 public class running_match_controller extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.running_match); //  links the controller to XML
+        setContentView(R.layout.running_match);
 
-        MaterialButton nextEventBtn = findViewById(R.id.Next_Event_button); // your button ID
+        MaterialButton nextEventBtn = findViewById(R.id.Next_Event_button);
 
         nextEventBtn.setOnClickListener(v -> {
             View eventView = LayoutInflater.from(this).inflate(R.layout.popup_event_select, null);
@@ -40,7 +36,7 @@ public class running_match_controller extends AppCompatActivity {
             Spinner teamSpinner = eventView.findViewById(R.id.team_spinner);
             Button continueButton = eventView.findViewById(R.id.continue_button);
 
-            String[] events = {"Goal", "Shot on Target","offside","Save", "Foul", "Yellow Card", "Red Card"};
+            String[] events = {"Goal", "Shot on Target", "Offside", "Save", "Foul", "Yellow Card", "Red Card"};
             String[] teams = {"Team A", "Team B"};
 
             eventSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, events));
@@ -51,7 +47,6 @@ public class running_match_controller extends AppCompatActivity {
                 String selectedTeam = teamSpinner.getSelectedItem().toString();
                 eventDialog.dismiss();
 
-                // Step 2: Open player selection
                 openPlayerPopup(selectedTeam, selectedEvent);
             });
         });
@@ -60,37 +55,20 @@ public class running_match_controller extends AppCompatActivity {
         Animation rotation = AnimationUtils.loadAnimation(this, R.anim.running_match_ball);
         rotatingBall.startAnimation(rotation);
 
-//        // EDITED START: Added onClick listener for end_match_button to open SingleHomePageFragment
-//        Button endMatchBtn = findViewById(R.id.end_match_button);
-//        endMatchBtn.setOnClickListener(v -> {
-//            // Open SingleHomePageFragment
-//            SingleHomePageFragment fragment = new SingleHomePageFragment();
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            transaction.replace(android.R.id.content, fragment);  // replace current view with fragment
-//            transaction.addToBackStack(null); // optional: allow back navigation
-//            transaction.commit();
-//        });
-        // EDITED END
-
-
-
-        //this part comes when the end match button is pressed
-
         Button endMatchButton = findViewById(R.id.end_match_button);
         TextView team1ScoreView = findViewById(R.id.running_match_team_1_score);
         TextView team2ScoreView = findViewById(R.id.running_match_team_2_score);
 
-// Get the score values as integers
-        int scoreA = Integer.parseInt(team1ScoreView.getText().toString());
-        int scoreB = Integer.parseInt(team2ScoreView.getText().toString());
-
         endMatchButton.setOnClickListener(v -> {
+            int scoreA = Integer.parseInt(team1ScoreView.getText().toString());
+            int scoreB = Integer.parseInt(team2ScoreView.getText().toString());
+
             new AlertDialog.Builder(running_match_controller.this)
                     .setTitle("End Match")
                     .setMessage("Are you sure you want to end the match?")
                     .setPositiveButton("Yes", (dialog, which) -> {
                         Intent intent = new Intent(running_match_controller.this, match_finished.class);
-                        intent.putExtra("scoreTeamA", scoreA); // pass actual score
+                        intent.putExtra("scoreTeamA", scoreA);
                         intent.putExtra("scoreTeamB", scoreB);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -109,25 +87,18 @@ public class running_match_controller extends AppCompatActivity {
         Spinner playerSpinner = playerView.findViewById(R.id.player_spinner);
         Button confirmButton = playerView.findViewById(R.id.confirm_button);
 
-        // Replace with your real player lists
-        String[] teamAPlayers = {"Antu", "Mahim", "Tahmid"};
-        String[] teamBPlayers = {"neymar", "ronaldo", "messi"};
+        String[] players = team.equals("Team A") ?
+                playerstore.teamAPlayers.toArray(new String[0]) :
+                playerstore.teamBPlayers.toArray(new String[0]);
 
-        String[] players = team.equals("Team A") ? teamAPlayers : teamBPlayers;
         prompt.setText("Select player for " + event.toLowerCase());
-
         playerSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, players));
 
         confirmButton.setOnClickListener(v -> {
             String selectedPlayer = playerSpinner.getSelectedItem().toString();
             playerDialog.dismiss();
 
-            // You can now handle the event with:
-            // selectedTeam, selectedEvent, selectedPlayer
             Toast.makeText(this, event + " by " + selectedPlayer + " (" + team + ")", Toast.LENGTH_SHORT).show();
         });
     }
-
-
-
 }
