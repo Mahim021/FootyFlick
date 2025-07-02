@@ -7,6 +7,5 @@ public class mini_player_model {
     public mini_player_model(String playerName, Integer rating) {
         this.playerName = playerName;
         this.rating = rating;
-
     }
 }
