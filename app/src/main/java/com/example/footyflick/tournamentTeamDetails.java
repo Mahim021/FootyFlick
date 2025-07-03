@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,26 +28,63 @@ public class tournamentTeamDetails extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ArrayList<player> teamPlayers = new ArrayList<>();
-
         LinearLayout playersContainer = view.findViewById(R.id.playersContainerTournament);
         Button addPlayerButton = view.findViewById(R.id.addPlayerButton);
+        EditText teamNameInput = view.findViewById(R.id.teamTitleInput);
+        Button confirmButton = view.findViewById(R.id.confirmButton);
 
         addTeamPlayers = new teamPlayerController(requireContext(), playersContainer, teamPlayers);
-
         addPlayerButton.setOnClickListener(v -> addTeamPlayers.addPlayer());
 
-        // confirm button
-        EditText teamNameInput = view.findViewById(R.id.teamTitleInput); // Make sure the ID is correct
-        Button confirmButton = view.findViewById(R.id.confirmButton);
+        // Get data from bundle
+        Bundle args = getArguments();
+        int teamCount = args != null ? args.getInt("TEAM_COUNT", 0) : 0;
+        int currentTeam = args != null ? args.getInt("CURRENT_TEAM_INDEX", 1) : 1;
+
         confirmButton.setOnClickListener(v -> {
             String name = teamNameInput.getText().toString().trim();
+
             if (name.isEmpty()) {
                 Toast.makeText(requireContext(), "Team name cannot be empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Toast.makeText(requireContext(), "Team " + currentTeam + " confirmed!", Toast.LENGTH_SHORT).show();
+
+            if (currentTeam < teamCount) {
+                // Load next team input fragment
+                Bundle nextBundle = new Bundle();
+                nextBundle.putInt("TEAM_COUNT", teamCount);
+                nextBundle.putInt("CURRENT_TEAM_INDEX", currentTeam + 1);
+
+                Fragment nextTeamFragment = new tournamentTeamDetails();
+                nextTeamFragment.setArguments(nextBundle);
+
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayout, nextTeamFragment)
+                        .commit(); // No addToBackStack
             } else {
-                Toast.makeText(requireContext(), "Team confirmed!", Toast.LENGTH_SHORT).show();
-                requireActivity().getSupportFragmentManager().popBackStack(); // Go back
+                // All teams added
+                Toast.makeText(requireContext(), "All teams added!", Toast.LENGTH_LONG).show();
+
+                // Optionally clear the stack or go back to the main fragment
+                // Clear the entire back stack (optional if stack isn't needed)
+                requireActivity().getSupportFragmentManager()
+                        .popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
+// Navigate to Tournament Home Page
+                Fragment homeFragment = new TournamentHomePageFragment(); // Use your actual class name here
+
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayout, homeFragment)
+                        .commit(); // No addToBackStack
+
+
             }
         });
+
     }
 
     @Override

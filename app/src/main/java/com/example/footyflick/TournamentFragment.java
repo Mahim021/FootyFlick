@@ -1,46 +1,23 @@
-
 package com.example.footyflick;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.example.footyflick.R;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.button.MaterialButton;
 
 public class TournamentFragment extends Fragment {
 
     public TournamentFragment() {
         // Required empty public constructor
-    }
-    @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        String[] options = getResources().getStringArray(R.array.tournament_type);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, options);
-
-        AutoCompleteTextView tournamentType = view.findViewById(R.id.selectTypeACT1);
-        tournamentType.setAdapter(adapter);
-
-        Button button = view.findViewById(R.id.selectPlayerButton);
-        button.setOnClickListener(v -> {
-            Fragment TournamentTeamDetails = new tournamentTeamDetails();
-
-            requireActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.frameLayout, TournamentTeamDetails) // replace with your container ID
-                    .addToBackStack(null) // Optional: adds to back stack so you can press back
-                    .commit();
-        });
     }
 
     @Override
@@ -48,5 +25,46 @@ public class TournamentFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tournament, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Setup dropdown for tournament type
+        String[] options = getResources().getStringArray(R.array.tournament_type);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, options);
+
+        AutoCompleteTextView tournamentType = view.findViewById(R.id.selectTypeACT1);
+        tournamentType.setAdapter(adapter);
+
+        // Get team number and button
+        EditText teamNumberInput = view.findViewById(R.id.teamNumberInput);
+        MaterialButton selectPlayerButton = view.findViewById(R.id.selectPlayerButton);
+
+        selectPlayerButton.setOnClickListener(v -> {
+            String numberText = teamNumberInput.getText().toString().trim();
+
+            if (!numberText.isEmpty()) {
+                int teamCount = Integer.parseInt(numberText);
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("TEAM_COUNT", teamCount);
+                bundle.putInt("CURRENT_TEAM_INDEX", 1); // Start from team 1
+
+                Fragment teamDetailsFragment = new tournamentTeamDetails();
+                teamDetailsFragment.setArguments(bundle);
+
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayout, teamDetailsFragment)
+                        .addToBackStack(null)
+                        .commit();
+
+            } else {
+                Toast.makeText(getContext(), "Please enter number of teams", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
