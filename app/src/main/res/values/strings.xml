@@ -14,4 +14,15 @@
         <item>League and Knockout</item>
         <item>Custom</item>
     </string-array>
+
+    <string-array name="player_role">
+        <item>GK</item>
+        <item>CB</item>
+        <item>RB/LB</item>
+        <item>CAM</item>
+        <item>CDM</item>
+        <item>RW</item>
+        <item>LW</item>
+        <item>ST</item>
+    </string-array>
 </resources>
