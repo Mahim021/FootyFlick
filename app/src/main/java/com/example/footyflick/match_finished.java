@@ -27,5 +27,6 @@ public class match_finished extends AppCompatActivity {
             Intent intent = new Intent(match_finished.this, player_stat.class);
             startActivity(intent);
         });
+
     }
 }
